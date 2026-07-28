@@ -1,18 +1,13 @@
 #include <stdio.h>
 
-int numadd(int a, int b)
-{
-    return a + b;
-} 
-
 int main(int argc, const char *argv[])
 {
-    int ia = 0;
-    int ib = 0;
-    if(scanf("%d", &ia) != 1)
+    int iWidth = 0;
+    int iHeight = 0;
+    if(scanf("%d", &iWidth) != 1)
         return -1;
-    if(scanf("%d", &ib) != 1)
+    if(scanf("%d", &iHeight) != 1)
         return -1;
 
-    printf("%d\n", numadd(ia, ib));
+    printf("%d\n", iWidth * iHeight);
 }
