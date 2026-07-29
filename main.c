@@ -2,18 +2,15 @@
 
 int main(int argc, const char *argv[])
 {
-    int num;
-    if(scanf("%d", &num) != 1)
+    unsigned int n = 0;
+    if(scanf("%u", &n) != 1)
         return -1;
+    
+    unsigned long long num = 0;
+    while(n != 0)
+        num += n--;
 
-    if(num % 3 == 0 && num % 5 == 0)
-        printf("FizzBuzz\n");
-    else if(num % 3 == 0)
-        printf("Fizz\n");
-    else if(num % 5 == 0)
-        printf("Buzz\n");
-    else 
-        printf("%d\n", num);
+    printf("%llu\n", num);
 
     return 0;
 }
