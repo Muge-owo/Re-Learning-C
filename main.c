@@ -1,16 +1,17 @@
 #include <stdio.h>
 
+int square(int x)
+{
+    return x * x;
+}
+
 int main(int argc, const char *argv[])
 {
-    unsigned int n = 0;
-    if(scanf("%u", &n) != 1)
+    int n;
+    if(scanf("%d", &n) != 1)
         return -1;
+
+    printf("%d\n", square(n));
     
-    unsigned long long num = 0;
-    while(n != 0)
-        num += n--;
-
-    printf("%llu\n", num);
-
     return 0;
 }
