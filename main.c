@@ -12,7 +12,8 @@ int main(int argc, const char *argv[])
         printf("Fizz\n");
     else if(num % 5 == 0)
         printf("Buzz\n");
-    
+    else 
+        printf("%d\n", num);
 
     return 0;
 }
