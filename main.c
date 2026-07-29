@@ -1,22 +1,26 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-typedef struct {
-    int x, y;
-} Point;
-
-
-int point(Point p1, Point p2)
+int main(int argc, const char *argv[])
 {
-    return (p1.x - p2.x)*(p1.x - p2.x) + (p1.y - p2.y)*(p1.y - p2.y);
-}
-
-int main(void) {
-    Point p1, p2;
-
-    if(scanf("%d %d", &(p1.x), &(p1.y)) != 2 || scanf("%d %d", &(p2.x), &(p2.y)) != 2) 
+    int n;
+    if(scanf("%d", &n) != 1)
         return -1;
 
-    printf("%d\n", point(p1, p2));
+    int *arr = calloc(n, sizeof(int));
+    for(int i = 0; i < n; i++){
+        if(scanf("%d", arr+i) != 1)
+            exit(0);
+    }
+
+    int num = 0;
+    for(int i = 0; i < n; i++){
+        num += *(arr+i);
+    }
+
+    printf("%d", num);
+
+    free(arr);
 
     return 0;
 }
