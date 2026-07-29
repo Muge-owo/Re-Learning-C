@@ -1,17 +1,23 @@
 #include <stdio.h>
 
-int square(int x)
+void swap(int *a, int *b)
 {
-    return x * x;
+    if(a == b)
+        return ;
+    *a ^= *b;
+    *b ^= *a;
+    *a ^= *b;
 }
 
-int main(int argc, const char *argv[])
+int main(int argc, const char argv[])
 {
-    int n;
-    if(scanf("%d", &n) != 1)
+    int iA, iB;
+    if(scanf("%d %d", &iA, &iB) != 2)
         return -1;
 
-    printf("%d\n", square(n));
-    
+    swap(&iA, &iB);
+
+    printf("%d %d\n", iA, iB);
+
     return 0;
 }
