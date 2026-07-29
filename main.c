@@ -1,23 +1,23 @@
 #include <stdio.h>
+#include <math.h>
 
-void swap(int *a, int *b)
+typedef struct {
+    int x, y;
+} Point;
+
+
+int point(Point p1, Point p2)
 {
-    if(a == b)
-        return ;
-    *a ^= *b;
-    *b ^= *a;
-    *a ^= *b;
+    return (pow(p1.x - p2.x, 2) + pow(p1.y - p2.y, 2));
 }
 
-int main(int argc, const char argv[])
-{
-    int iA, iB;
-    if(scanf("%d %d", &iA, &iB) != 2)
+int main(void) {
+    Point p1, p2;
+    
+    if(scanf("%d %d", &(p1.x), &(p1.y)) != 2 || scanf("%d %d", &(p2.x), &(p2.y)) != 2) 
         return -1;
 
-    swap(&iA, &iB);
-
-    printf("%d %d\n", iA, iB);
+    printf("%d\n", point(p1, p2));
 
     return 0;
 }
