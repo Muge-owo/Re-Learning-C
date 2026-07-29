@@ -8,9 +8,13 @@ int main(int argc, const char *argv[])
         return -1;
 
     int *arr = calloc(n, sizeof(int));
+
+    if(arr == NULL)
+        exit(-1);
+
     for(int i = 0; i < n; i++){
         if(scanf("%d", arr+i) != 1)
-            exit(0);
+            exit(-2);
     }
 
     int num = 0;
