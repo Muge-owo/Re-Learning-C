@@ -1,5 +1,5 @@
+#include "inttypes.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(int argc, const char *argv[])
 {
@@ -7,24 +7,25 @@ int main(int argc, const char *argv[])
     if(scanf("%d", &n) != 1)
         return -1;
 
-    int *arr = calloc(n, sizeof(int));
+    FILE* out = fopen("./12-file-io/clines.txt", "w");
+    char str[1024];
+    int size = sizeof(str) / sizeof(str[0]);
 
-    if(arr == NULL)
-        exit(-1);
-
+    fprintf(out, "%d", n);
     for(int i = 0; i < n; i++){
-        if(scanf("%d", arr+i) != 1)
-            exit(-2);
+        if(fgets(str, size, stdin) == NULL){
+            return -2;
+        }
+        fprintf(out, "%s", str);
     }
 
-    int num = 0;
-    for(int i = 0; i < n; i++){
-        num += *(arr+i);
-    }
+    FILE* in = fopen("./12-file-io/clines.txt", "r");
 
-    printf("%d", num);
+    int line = 0;
+    while(fgets(str, size, in) != NULL)
+        line++;
 
-    free(arr);
+    printf("lines: %d\n", line);
 
     return 0;
 }
