@@ -1,16 +1,9 @@
 #include <stdio.h>
 
-#define CUBE(x) (x)*(x)*(x)
-
 int main(int argc, const char *argv[])
 {
-    int x;
-    if(scanf("%d", &x) != 1){
-        fprintf(stderr, "__%d__\n", __LINE__);
-        return -1;
-    }
-
-    printf("%d cubed is %d\n", x, CUBE(x));
+    printf("Hello C Language!\n");
+    printf("課題終了!!!おめでとう～\n");
 
     return 0;
 }
